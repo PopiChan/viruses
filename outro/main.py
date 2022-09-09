@@ -7,16 +7,16 @@ from time import sleep
 from threading import Thread
 
 
-bat_file_path = str(f"{os.path.dirname(__file__)}/bat/pip.bat")
-subprocess.call([bat_file_path])
+bat_pip_path = str(f"{os.path.dirname(__file__)}/bat/pip.bat")
+subprocess.call([bat_pip_path])
 
 
 import keyboard
 keyboard.press('f11')
 
 def changeVolume(arg):
-    batch_vbs_file_path = str(f"{os.path.dirname(__file__)}/bat/vbs.bat")
-    subprocess.call([batch_vbs_file_path])
+    batch_volume_file_path = str(f"{os.path.dirname(__file__)}/bat/volume.bat")
+    subprocess.call([batch_volume_file_path])
 
 volumeThread = Thread(target = changeVolume, args = (10, ))
 volumeThread.start()
