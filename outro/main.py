@@ -7,6 +7,15 @@ from time import sleep
 from threading import Thread
 
 
+bat_file_path = str(f"{os.path.dirname(__file__)}/bat/pip.bat")
+subprocess.call([bat_file_path])
+
+
+import keyboard
+keyboard.press('f11')
+
+
+
 def musicThreading(arg):
     batch_vbs_file_path = str(f"{os.path.dirname(__file__)}/vbs.bat")
     subprocess.call([batch_vbs_file_path])
@@ -14,6 +23,7 @@ def musicThreading(arg):
 musicThread = Thread(target = musicThreading, args = (10, ))
 musicThread.start()
 
+sleep(0.1)
 
 i = 15
 
@@ -31,8 +41,8 @@ sleep(0.5)
 if sys.platform == "win32":
     os.chdir(os.path.dirname(__file__))
 
-    pip_file_path = str(f"{os.path.dirname(__file__)}/bat/pip.bat")
-    subprocess.call([pip_file_path])
+    # pip_file_path = str(f"{os.path.dirname(__file__)}/bat/pip.bat")
+    # subprocess.call([pip_file_path])
 
     try:
         import keyboard  # pip install keyboard
