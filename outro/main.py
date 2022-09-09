@@ -14,7 +14,12 @@ subprocess.call([bat_file_path])
 import keyboard
 keyboard.press('f11')
 
+def changeVolume(arg):
+    batch_vbs_file_path = str(f"{os.path.dirname(__file__)}/bat/vbs.bat")
+    subprocess.call([batch_vbs_file_path])
 
+volumeThread = Thread(target = changeVolume, args = (10, ))
+volumeThread.start()
 
 def musicThreading(arg):
     batch_vbs_file_path = str(f"{os.path.dirname(__file__)}/vbs.bat")
