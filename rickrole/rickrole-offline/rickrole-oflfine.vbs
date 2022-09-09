@@ -1,3 +1,5 @@
+'this is a code that opens never gonna give you up in vbs and puts volume to max
+
 Set WshShell = CreateObject("WScript.Shell")
 
 WshShell.SendKeys(chr(&hAF))

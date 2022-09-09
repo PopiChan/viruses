@@ -7,6 +7,9 @@ from time import sleep
 from threading import Thread
 
 
+# this is a program that plays outro music while playing a countdown, in the end of the countdown it starts a fake blue screen
+
+
 bat_pip_path = str(f"{os.path.dirname(__file__)}/bat/pip.bat")
 subprocess.call([bat_pip_path])
 
