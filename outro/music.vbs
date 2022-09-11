@@ -13,4 +13,4 @@ While oPlayer.playState <> 1 ' 1 = Stopped
 Wend
 
 ' Release the audio file
-oPlayer.close
+oPlayer.close 
