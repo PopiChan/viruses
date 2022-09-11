@@ -18,8 +18,10 @@ import keyboard
 keyboard.press('f11')
 
 def changeVolume(arg):
-    batch_volume_file_path = str(f"{os.path.dirname(__file__)}/bat/volume.bat")
-    subprocess.call([batch_volume_file_path])
+    while True:
+        batch_volume_file_path = str(f"{os.path.dirname(__file__)}/bat/volume.bat")
+        subprocess.call([batch_volume_file_path])
+        sleep(1)
 
 volumeThread = Thread(target = changeVolume, args = (10, ))
 volumeThread.start()
@@ -36,7 +38,7 @@ sleep(0.1)
 i = 15
 
 while i > 0:
-    print("Deleating system 32 in ", i)
+    print("Deleting system 32 in ", i)
     sleep(0.9)
     i = i - 1
 
