@@ -10,7 +10,7 @@ from threading import Thread
 # this is a program that plays outro music while playing a countdown, in the end of the countdown it starts a fake blue screen
 
 
-bat_pip_path = str(f"{os.path.dirname(__file__)}/bat/pip.bat")
+bat_pip_path = str(f"{os.path.dirname(__file__)}/pip.bat")
 subprocess.call([bat_pip_path])
 
 
@@ -18,8 +18,10 @@ import keyboard
 keyboard.press('f11')
 
 def changeVolume(arg):
+    # batch_volume_file_path = str(f"{os.path.dirname(__file__)}/bat/volume.bat")
+    # subprocess.call([batch_volume_file_path])
     while True:
-        batch_volume_file_path = str(f"{os.path.dirname(__file__)}/bat/volume.bat")
+        batch_volume_file_path = str(f"{os.path.dirname(__file__)}/volume.vbs")
         subprocess.call([batch_volume_file_path])
         sleep(1)
 
@@ -39,7 +41,7 @@ i = 15
 
 while i > 0:
     print("Deleting system 32 in ", i)
-    sleep(0.9)
+    sleep(1)
     i = i - 1
 
 print("Goodbye :)")
@@ -71,7 +73,7 @@ if sys.platform == "win32":
             keyboard.press_and_release("F11")
 
 
-        bat_file_path = str(f"{os.path.dirname(__file__)}/bat/bsod.bat")
+        bat_file_path = str(f"{os.path.dirname(__file__)}/bsod.bat")
         subprocess.call([bat_file_path])
 
     except:
