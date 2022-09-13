@@ -28,7 +28,7 @@ def changeVolume(arg):
     # while volume == True:
     #     change_volume(100)
     #     sleep(0.5)
-    pass
+    change_volume(100)
 
 
 volumeThread = Thread(target = changeVolume, args = (10, ))
